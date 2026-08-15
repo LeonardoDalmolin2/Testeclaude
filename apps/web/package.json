@@ -1,0 +1,28 @@
+{
+  "name": "@project/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit -p tsconfig.app.json && vite build",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.app.json",
+    "lint": "eslint \"src/**/*.{ts,vue}\""
+  },
+  "dependencies": {
+    "@project/shared": "workspace:*",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.25.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.4.0",
+    "vue-eslint-parser": "^9.4.2",
+    "vue-tsc": "^2.0.16"
+  }
+}

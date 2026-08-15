@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "types": ["node"],
+    "baseUrl": ".",
+    "paths": {
+      "@project/api": ["apps/api/src/bootstrap.ts"]
+    }
+  },
+  "include": ["api/**/*.ts"]
+}

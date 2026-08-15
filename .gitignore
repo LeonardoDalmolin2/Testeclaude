@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Vercel / tooling
+.vercel
+.turbo
+coverage
+*.tsbuildinfo
