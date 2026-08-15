@@ -16,13 +16,13 @@ const router = createRouter({
       path: '/questions',
       name: 'questions',
       component: () => import('@/views/QuestionsView.vue'),
-      meta: { requiresImage: true },
+      meta: { requiresImage: true, requiresPhotoApproved: true },
     },
     {
       path: '/generating',
       name: 'generating',
       component: () => import('@/views/GeneratingView.vue'),
-      meta: { requiresImage: true },
+      meta: { requiresImage: true, requiresPhotoApproved: true },
     },
     {
       path: '/result',
@@ -37,6 +37,7 @@ const router = createRouter({
 router.beforeEach((to) => {
   const session = useSessionStore();
   if (to.meta.requiresImage && !session.hasImage) return { name: 'selfie' };
+  if (to.meta.requiresPhotoApproved && !session.photoApproved) return { name: 'review' };
   if (to.meta.requiresResult && !session.hasResult) return { name: 'home' };
   return true;
 });
